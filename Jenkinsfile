@@ -7,7 +7,7 @@ pipeline {
       }
       steps {
         sh '''sudo docker ps | awk \'{print $1}\' | xargs sudo docker kill || true
-sudo docker-compose up'''
+sudo docker-compose up -d'''
       }
     }
   }
