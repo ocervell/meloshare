@@ -6,7 +6,7 @@ pipeline {
         SQLALCHEMY_DATABASE_URL = 'sqlite:////tmp/dev.sqlite'
       }
       steps {
-        sh '''sudo docker ps | awk \'{print $1}\' | xargs sudo docker kill
+        sh '''sudo docker ps | awk \'{print $1}\' | xargs sudo docker kill || true
 sudo docker-compose up'''
       }
     }
