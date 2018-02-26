@@ -14,8 +14,8 @@ sudo docker-compose up -d'''
       parallel {
         stage('cURL tests') {
           steps {
-            sh '''curl localhost:5000/home/
-curl localhost:5001/api/'''
+            sh '''curl localhost:5000/home/ | grep "meloshare" && echo "Home OK !"
+curl localhost:5001/api/ | grep "index" && echo "API OK !"'''
           }
         }
         stage('py tests') {
